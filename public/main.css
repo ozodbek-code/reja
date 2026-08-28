@@ -1,0 +1,10 @@
+.main_frame {
+    position: relative;
+    width: 1440px;
+    height: 1320px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    
+}
