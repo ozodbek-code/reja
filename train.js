@@ -47,16 +47,31 @@
 // }
 // run();
 
-function countLetter(letter, word) {
-  let count = 0;
+// function countLetter(letter, word) {
+//   let count = 0;
 
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) {
-      count++;
-    }
-  }
+//   for (let i = 0; i < word.length; i++) {
+//     if (word[i] === letter) {
+//       count++;
+//     }
+//   }
 
-  return count;
+//   return count;
+// }
+
+// console.log(countLetter("e", "engineer")); 
+
+function countDigits(str) {
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] >= "0" && str[i] <= "9") {
+            count++;
+        }
 }
 
-console.log(countLetter("e", "engineer")); 
+    
+return count;
+}
+
+console.log(countDigits("h3c98jcanajk123cajkn092ankjna114"));
