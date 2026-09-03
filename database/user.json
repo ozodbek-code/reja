@@ -1,20 +1,97 @@
 {
-  "name": "Steve",
+  "name": "Ozodbek(RIO)",
   "profession": "Software Engineer",
   "age": 20,
-  "residence": "S.Korea",
-  "adress": "S.Korea, Busan",
-  "languages": ["Uzbek", "Korean", "English"],
-  "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
-  "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django, Flask", "GIT Knowledge"],
+  "residence": "Uzbek",
+  "address": "South Korea, Seoul",
+
+  "languages": [
+    {
+      "name": "Uzbek",
+      "percent": 100
+    },
+    {
+      "name": "Korean",
+      "percent": 60
+    },
+    {
+      "name": "English",
+      "percent": 90
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "HTML",
+      "percent": 90
+    },
+    {
+      "name": "CSS",
+      "percent": 80
+    },
+    {
+      "name": "JavaScript",
+      "percent": 70
+    },
+    {
+      "name": "NodeJS",
+      "percent": 60
+    },
+    {
+      "name": "Python",
+      "percent": 50
+    }
+  ],
+
+  "extra_skills": [
+    "Bootstrap, Materialize",
+    "Styling, Sass",
+    "Django, Flask",
+    "GIT Knowledge"
+  ],
+
   "work_place": "IT Company",
-  "service_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat...",
-  "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoq...",
-  "city": "Denau",
-  "title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
-  "flower_desc": ["What is a Flower?", "What is a Seedling?", "Who is Gardner?"],
-  "flower_name": ["Tulip", "Daffodil", "Poppy", "Sunflower", "Bluebell", "Rose", "Snowdrop", "Cherry", "blossom"],
-  "flower_price": ["15$", "25$", "12$", "20$", "35$", "30$", "22$", "19$", "9$"],
-  "famous_words": ["World is Beautiful with Flowers"],
-  "famous_name": ["Steve Jobs"]
+  "about_me": "I am a Computer Science and Engineering student who is passionate about programming and web development. I am currently developing my skills in JavaScript, Node.js, Python, and backend development. I enjoy learning new technologies and working on projects that help me grow as a developer.",
+
+  "service_desc": "I create simple and responsive websites and web applications. I focus on clean code, user-friendly design, and reliable functionality while continuously improving my development skills.",
+
+  "city": "Seoul",
+
+  "title": [
+  "Web Development",
+  "Backend Development",
+  "Prices",
+  "Famous Words",
+  "Famous name"
+],
+
+"flower_desc": [
+  "Responsive websites",
+  "Modern web interfaces",
+  "Clean and user-friendly design"
+],
+
+"flower_name": [
+  "Node.js",
+  "Express.js",
+  "REST API",
+  "Database integration",
+  "Server-side development"
+],
+
+"flower_price": [
+  "$3000",
+  "$2400",
+  "$1000",
+  "$4600",
+  "$1800"
+],
+
+"famous_words": [
+  "The sweetness of doing nothing"
+],
+
+"famous_name": [
+  "Donald Trump"
+]
 }

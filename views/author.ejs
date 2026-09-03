@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/main.css" />
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="main_frame">
+
+      <!-- LEFT FRAME -->
+      <div class="left_frame">
+
+        <!-- Profile -->
+        <div class="left_1">
+
+          <div class="left_1-1">
+            <img
+              src="images/profile.png"
+              width="156"
+              height="142"
+              alt="Profile"
+            />
+          </div>
+
+          <div class="left_1-2"><%= user.name %></div>
+          <div class="left_1-3"><%= user.profession %></div>
+
+          <div class="left_icons">
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector.svg" class="icon-1" alt="Social link" />
+              </div>
+            </a>
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector-1.svg" class="icon-1" alt="Social link" />
+              </div>
+            </a>
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector-2.svg" class="icon-1" alt="Social link" />
+              </div>
+            </a>
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector-3.svg" class="icon-1" alt="Social link" /> 
+              </div>
+            </a>
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector-4.svg" class="icon-1" alt="Social link" />
+              </div>
+            </a>
+
+            <a class="link_href" href="#">
+              <div class="icon">
+                <img src="icon/Vector-5.svg" class="icon-1" alt="Social link" />
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="marginer"></div>
+
+        <!-- Personal Information -->
+        <div class="left_2">
+
+          <div class="left_2-row">
+            <span class="left_2-label">Age:</span>
+            <span class="left_2-value"><%= user.age %></span>
+          </div>
+
+          <div class="left_2-row">
+            <span class="left_2-label">Residence:</span>
+            <span class="left_2-value"><%= user.residence %></span>
+          </div>
+
+          <div class="left_2-row">
+            <span class="left_2-label">Freelance:</span>
+            <span class="left_2-value left_2-value--freelance">
+              Available
+            </span>
+          </div>
+
+          <div class="left_2-row">
+            <span class="left_2-label">Address:</span>
+            <span class="left_2-value"><%= user.address %></span>
+          </div>
+
+        </div>
+
+        <div class="marginer"></div>
+
+        <!-- Languages -->
+        <div class="left_3">
+
+          <div class="left_3-title">Languages</div>
+
+          <% user.languages.forEach(function(lang) { %>
+
+            <div class="skill_row">
+
+              <div class="skill_row-top">
+                <span class="skill_row-name">
+                  <%= lang.name %>
+                </span>
+
+                <span class="skill_row-percent">
+                  <%= lang.percent %>%
+                </span>
+              </div>
+
+              <div class="skill_row-bar">
+                <div
+                  class="skill_row-bar-fill"
+                  data-percent="<%= lang.percent %>"
+                ></div>
+              </div>
+
+            </div>
+
+          <% }); %>
+
+        </div>
+
+        <div class="marginer"></div>
+
+        <!-- Skills -->
+        <div class="left_4">
+
+          <div class="left_4-title">Skills</div>
+
+          <% user.skills.forEach(function(skill) { %>
+
+            <div class="skill_row">
+
+              <div class="skill_row-top">
+                <span class="skill_row-name">
+                  <%= skill.name %>
+                </span>
+
+                <span class="skill_row-percent">
+                  <%= skill.percent %>%
+                </span>
+              </div>
+
+              <div class="skill_row-bar">
+                <div
+                  class="skill_row-bar-fill"
+                  data-percent="<%= skill.percent %>"
+                ></div>
+              </div>
+
+            </div>
+
+          <% }); %>
+
+        </div>
+
+        <div class="marginer"></div>
+
+        <!-- Extra Skills -->
+        <div class="left_5">
+
+          <div class="left_5-title">Extra Skills</div>
+
+          <% user.extra_skills.forEach(function(item) { %>
+
+            <div class="extra_skill-row">
+
+              <div class="extra_skill-icon">
+                <img src="icon/folder.svg" alt="Extra skill" />
+              </div>
+
+              <span class="extra_skill-text">
+                <%= item %>
+              </span>
+
+            </div>
+
+          <% }); %>
+
+        </div>
+
+        <div class="marginer"></div>
+
+      </div>
+
+
+      <!-- MIDDLE FRAME -->
+      <div class="midd_frame">
+
+        <!-- Hero / Banner -->
+        <div class="midd_1">
+
+          <div class="midd_1-deco">
+
+            <img
+              src="icon/circle-outline1.svg"
+              class="deco deco-1"
+              alt=""
+            />
+
+            <img
+              src="icon/circle-outline2.svg"
+              class="deco deco-2"
+              alt=""
+            />
+
+            <img
+              src="icon/circle-outline3.svg"
+              class="deco deco-3"
+              alt=""
+            />
+
+            <img
+              src="icon/diamond-outline1.svg"
+              class="deco deco-4"
+              alt=""
+            />
+
+            <img
+              src="icon/diamond-outline2.svg"
+              class="deco deco-5"
+              alt=""
+            />
+
+            <img
+              src="icon/triangle-outline.svg"
+              class="deco deco-6"
+              alt=""
+            />
+
+          </div>
+
+          <div class="midd_1-content">
+
+            <h1 class="midd_1-title">
+              <%= user.work_place %> in <%= user.city %>
+            </h1>
+
+            <p class="midd_1-text">
+              <%= user.about_me %>
+            </p>
+
+            <a href="#" class="midd_1-btn">
+              Hire Me
+              <span class="midd_1-btn-arrow">&#8594;</span> 
+            </a>
+
+          </div>
+
+
+          <div class="midd_1-image">
+            <img src="images/main-photo.png" alt="Main photo" />
+          </div>
+
+        </div>
+
+
+        <!-- My Services -->
+        <div class="midd_2">
+
+          <h2 class="midd_2-title">My Services</h2>
+
+          <p class="midd_2-text">
+            <%= user.service_desc %>
+          </p>
+
+          <div class="midd_2-grid">
+
+            <!-- Service 1 -->
+            <div class="service_card">
+
+              <div class="service_card-icon">
+                <img src="icon/coding.svg" alt="Coding" />
+              </div>
+
+              <div class="service_card-title">
+                <%= user.title[0] %>
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.flower_desc.join(', ') %>
+              </div>
+
+            </div>
+
+
+            <!-- Service 2 -->
+            <div class="service_card">
+
+              <div class="service_card-icon">
+                <img
+                  src="icon/game-development.svg"
+                  alt="Game development"
+                />
+              </div>
+
+              <div class="service_card-title">
+                <%= user.title[1] %> 
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.flower_name.join(', ') %>
+              </div>
+
+            </div>
+
+
+            <!-- Service 3 -->
+            <div class="service_card">
+
+              <div class="service_card-icon">
+                <img
+                  src="icon/illustration.svg"
+                  alt="Illustration"
+                />
+              </div>
+
+              <div class="service_card-title">
+                <%= user.title[2] %>
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.flower_price.join(', ') %>
+              </div>
+
+            </div>
+
+
+            <!-- Service 4 -->
+            <div class="service_card">
+
+              <div class="service_card-icon">
+                <img
+                  src="icon/Microphone.svg"
+                  alt="Microphone"
+                />
+              </div>
+
+              <div class="service_card-title">
+                <%= user.title[3] %>
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.famous_words[0] %>
+              </div>
+
+            </div>
+
+
+            <!-- Service 5 -->
+            <div class="service_card">
+
+              <div class="service_card-icon">
+                <img
+                  src="icon/Photographer.svg"
+                  alt="Photographer"
+                />
+              </div>
+
+              <div class="service_card-title">
+                <%= user.title[4] %>
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.famous_name[0] %>
+              </div>
+
+            </div>
+
+
+            <!-- Advertising -->
+            <div class="service_card">
+
+              <div class="service_card-title">
+                Advertising
+              </div>
+
+              <div class="service_card-sub">
+                <%= user.about_me %>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT FRAME -->
+      <div class="right_frame">
+
+        <div class="right_nav">
+
+          <a href="#" class="nav_icon" data-tooltip="Home">
+            <img
+              src="icon/home.svg"
+              class="nav_icon-img"
+              alt="Home"
+            /> 
+          </a>
+
+          <a href="#" class="nav_icon" data-tooltip="Code">
+            <img
+              src="icon/code.svg"
+              class="nav_icon-img"
+              alt="Code"
+            />
+          </a>
+
+          <a href="#" class="nav_icon" data-tooltip="Education">
+            <img
+              src="icon/cv.svg"
+              class="nav_icon-img"
+              alt="Education"
+            />
+          </a>
+
+          <a href="#" class="nav_icon" data-tooltip="Blank">
+            <img
+              src="icon/blank.svg"
+              class="nav_icon-img"
+              alt="Blank"
+            />
+          </a>
+
+          <a href="#" class="nav_icon" data-tooltip="Contact">
+            <img
+              src="icon/contact.svg"
+              class="nav_icon-img"
+              alt="Contact"
+            />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".skill_row-bar-fill").forEach(function (bar) {
+      bar.style.width = bar.dataset.percent + "%";
+    });
+  </script>
+
+</body>
+</html>
