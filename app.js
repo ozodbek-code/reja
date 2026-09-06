@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 // 2 sessions code
 
 // 3 Views code
-app.set("views", "./view");
+app.set("views", "./views");
 app.set("view engine", "ejs");
 
 // 4 Routing Code
@@ -22,12 +22,8 @@ app.post("/create-item", (req, res) => {
    console.log("user entered /create-item");
    const new_reja = req.body.reja;
    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-   if(err) {
-    console.log(err);
-    res.end("something went wrong");
-   } else {
-     res.end("seccessfully aded");
-   }
+    console.log(data.ops);
+    res.json(data.ops[0]);
    });
 });
 
