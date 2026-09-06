@@ -30,7 +30,6 @@ document.getElementById("create-form")
             .post("/create-item", {
                 reja: createField.value
             })
-
             .then((response) => {
 
                 document
@@ -43,9 +42,50 @@ document.getElementById("create-form")
                 createField.value = "";
                 createField.focus();
             })
-
             .catch((err) => {
                 console.log("Iltimos qaytadan harakat qiling");
                 console.log(err);
             });
     });
+
+
+// DELETE OPERATSIYA
+
+document.addEventListener("click", function (e) {
+
+    console.log(e.target);
+
+    if (e.target.classList.contains("delete-me")) {
+
+        if (confirm("Aniq o‘chirmoqchimisiz?")) {
+
+            axios
+                .post("/delete-item", {
+                    id: e.target.getAttribute("data-id")
+                })
+                .then((response) => {
+
+                    console.log(response.data);
+
+                    e.target.parentElement.parentElement.remove();
+
+                })
+                .catch((err) => {
+
+                    console.log("Iltimos qaytadan harakat qiling");
+                    console.log(err);
+
+                });
+        }
+    }
+
+
+    // EDIT OPERATSIYA
+
+    if (e.target.classList.contains("edit-me")) {
+
+        alert("Siz edit tugmasini bosdingiz");
+
+    }
+
+});
