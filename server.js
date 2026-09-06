@@ -1,33 +1,32 @@
 const http = require("http");
-const mongodb = require("mongodb");
+const { MongoClient } = require("mongodb");
 
-let db;
-const connectionString = "mongodb+srv://ozodbekamirov1188_db_user:OZodAWQXCQAS@cluster0.gmm48x3.mongodb.net/Reja?authSource=admin"
+const connectionString ="mongodb+srv://ozodbekamirov1188_db_user:OZodAWQXCQAS@cluster0.gmm48x3.mongodb.net/Reja?authSource=admin";
 
-mongodb.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}, (err, client) => {
+const client = new MongoClient(connectionString);
 
-    if (err) {
-        console.log("ERROR on connection MongoDB:", err);
-    } else {
+client.connect()
+    .then(() => {
         console.log("MongoDB connection succeed");
 
-        module.exports = client;
+        const db = client.db("Reja");
 
         const app = require("./app");
+
+        app.locals.db = db;
+
         const server = http.createServer(app);
 
-        let PORT = 3000;
+        const PORT = 3000;
 
-        server.listen(PORT, function () {
-            console.log(
-                `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`
-            );
+        server.listen(PORT, () => {
+            console.log(`Server running: http://localhost:${PORT}`);
         });
-    }
-});
+    })
+    .catch((err) => {
+        console.log("ERROR on connection MongoDB:", err);
+    });
+
 
 
 // console.log("Web Serverni boshlash");
