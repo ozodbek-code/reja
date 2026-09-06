@@ -61,17 +61,25 @@
 
 // console.log(countLetter("e", "engineer")); 
 
-function countDigits(str) {
-    let count = 0;
+// function countDigits(str) {
+//     let count = 0;
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] >= "0" && str[i] <= "9") {
-            count++;
-        }
-}
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] >= "0" && str[i] <= "9") {
+//             count++;
+//         }
+// }
 
     
-return count;
+// return count;
+// }
+
+// console.log(countDigits("h3c98jcanajk123cajkn092ankjna114"));
+
+
+function checkContent(str1, str2) {
+    return str1.split("").sort().join("") === str2.split("").sort().join("");
 }
 
-console.log(countDigits("h3c98jcanajk123cajkn092ankjna114"));
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent("Salom", "MIT"));       
