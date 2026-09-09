@@ -32,36 +32,100 @@ app.post("/create-item", (req, res) => {
 
     const new_reja = req.body.reja;
 
-    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    db.collection("plans")
+        .insertOne({ reja: new_reja })
+        .then((data) => {
 
-        console.log(data.ops);
+            console.log(data);
 
-        res.json(data.ops[0]);
+            res.json({
+                _id: data.insertedId,
+                reja: new_reja
+            });
 
-    });
+        })
+        .catch((err) => {
+
+            console.log(err);
+            res.status(500).json({ state: "error" });
+
+        });
 
 });
 
 app.post("/delete-item", (req, res) => {
 
     const db = req.app.locals.db;
-
     const id = req.body.id;
 
     db.collection("plans").deleteOne(
-        { _id: new mongodb.ObjectId(id) },
-        function(err, data) {
+        { _id: new mongodb.ObjectId(id) }
+    )
+    .then((data) => {
+
+        res.json({ state: "success" });
+
+    })
+    .catch((err) => {
+
+        console.log(err);
+        res.status(500).json({ state: "error" });
+
+    });
+
+});
+
+app.post("/edit-item", (req, res) => {
+
+    const db = req.app.locals.db;
+
+    const data = req.body;
+
+    console.log("user entered");
+
+    db.collection("plans")
+        .findOneAndUpdate(
+            { _id: new mongodb.ObjectId(data.id) },
+            { $set: { reja: data.new_input } }
+        )
+        .then((result) => {
 
             res.json({ state: "success" });
 
-        }
-    );
+        })
+        .catch((err) => {
+
+            console.log(err);
+            res.status(500).json({ state: "error" });
+
+        });
 
 });
+
 
 app.get("/author", (req, res) => {
 
     res.render("author");
+
+});
+
+app.post("/delete-all", (req, res) => {
+
+const db = req.app.locals.db;
+if (req.body.delete_all) {
+db.collection("plans")
+    .deleteMany({})
+            .then(() => {
+res.json({state: "hamma rejalar ochirildi"});
+
+})
+.catch((err) => {
+
+console.log(err);
+res.status(500).json({ state: "error"});
+
+});
+}
 
 });
 

@@ -76,18 +76,4 @@
 
 // console.log(countDigits("h3c98jcanajk123cajkn092ankjna114"));
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-function checkContent(str1, str2) {
-    return str1.split("").sort().join("") === str2.split("").sort().join("");
-}
-
-<<<<<<< Updated upstream
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent("Salom", "MIT"));       
-=======
-console.log(checkContent("mitgroup", "gmtiprou")); 
-console.log(checkContent("Salom", "MIT"));         
->>>>>>> Stashed changes
