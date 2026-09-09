@@ -77,3 +77,70 @@
 // console.log(countDigits("h3c98jcanajk123cajkn092ankjna114"));
 
 
+
+
+
+// D - task
+
+class Shop {
+    constructor(non, manti, fanta) {
+        this.non = non;
+        this.manti = manti;
+        this.fanta = fanta;
+    }
+
+    qoldiq() {
+        const vaqt = new Date().toLocaleTimeString("ko-KR", {
+            timeZone: "Asia/Seoul",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+        const result = `Hozir ${vaqt}da ${this.non}ta non, ${this.manti}ta manti va ${this.fanta}ta fanta mavjud!`;
+
+        console.log(result);
+        return result;
+    }
+
+    sotish(mahsulot, soni) {
+        if (this[mahsulot] >= soni) {
+            this[mahsulot] -= soni;
+        } else {
+            console.log(`${mahsulot} yetarli emas!`);
+        }
+
+        const vaqt = new Date().toLocaleTimeString("ko-KR", {
+            timeZone: "Asia/Seoul",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+        console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`);
+
+        return this;
+    }
+
+    qabul(mahsulot, soni) {
+        this[mahsulot] += soni;
+
+        const vaqt = new Date().toLocaleTimeString("ko-KR", {
+            timeZone: "Asia/Seoul",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+        console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`);
+
+        return this;
+    }
+}
+
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+
+shop.sotish("non", 3);
+
+shop.qabul("fanta", 4);
+
+shop.qoldiq();
