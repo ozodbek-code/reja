@@ -82,65 +82,80 @@
 
 // D - task
 
-class Shop {
-    constructor(non, manti, fanta) {
-        this.non = non;
-        this.manti = manti;
-        this.fanta = fanta;
-    }
+// class Shop {
+//     constructor(non, manti, fanta) {
+//         this.non = non;
+//         this.manti = manti;
+//         this.fanta = fanta;
+//     }
 
-    qoldiq() {
-        const vaqt = new Date().toLocaleTimeString("ko-KR", {
-            timeZone: "Asia/Seoul",
-            hour: "2-digit",
-            minute: "2-digit"
-        });
+//     timeZone() {
+//         const vaqt = new Date().toLocaleTimeString("ko-KR", {
+//             timeZone: "Asia/Seoul",
+//             hour: "2-digit",
+//             minute: "2-digit"
+//         });
 
-        const result = `Hozir ${vaqt}da ${this.non}ta non, ${this.manti}ta manti va ${this.fanta}ta fanta mavjud!`;
+//         const result = `Hozir ${vaqt}da ${this.non}ta non, ${this.manti}ta manti va ${this.fanta}ta fanta mavjud!`;
 
-        console.log(result);
-        return result;
-    }
+//         console.log(result);
+//         return result;
+//     }
 
-    sotish(mahsulot, soni) {
-        if (this[mahsulot] >= soni) {
-            this[mahsulot] -= soni;
-        } else {
-            console.log(`${mahsulot} yetarli emas!`);
+//     sotish(mahsulot, soni) {
+//         if (this[mahsulot] >= soni) {
+//             this[mahsulot] -= soni;
+//         } else {
+//             console.log(`${mahsulot} yetarli emas!`);
+//         }
+
+//         const vaqt = new Date().toLocaleTimeString("ko-KR", {
+//             timeZone: "Asia/Seoul",
+//             hour: "2-digit",
+//             minute: "2-digit"
+//         });
+
+//         console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`);
+
+//         return this;
+//     }
+
+//     qabul(mahsulot, soni) {
+//         this[mahsulot] += soni;
+
+//         const vaqt = new Date().toLocaleTimeString("ko-KR", {
+//             timeZone: "Asia/Seoul",
+//             hour: "2-digit",
+//             minute: "2-digit"
+//         });
+
+//         console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`);
+
+//         return this;
+//     }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.timeZone();
+
+// shop.sotish("non", 3);
+
+// shop.qabul("fanta", 4);
+
+
+function findDoublers(str) {
+    const letters = new Set();
+    for(let char of str) {
+        if(letters.has(char)){
+         return true;
         }
-
-        const vaqt = new Date().toLocaleTimeString("ko-KR", {
-            timeZone: "Asia/Seoul",
-            hour: "2-digit",
-            minute: "2-digit"
-        });
-
-        console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`);
-
-        return this;
+      letters.add(char);
     }
-
-    qabul(mahsulot, soni) {
-        this[mahsulot] += soni;
-
-        const vaqt = new Date().toLocaleTimeString("ko-KR", {
-            timeZone: "Asia/Seoul",
-            hour: "2-digit",
-            minute: "2-digit"
-        });
-
-        console.log(`Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`);
-
-        return this;
-    }
+    return false;
 }
-
-const shop = new Shop(4, 5, 2);
-
-shop.qoldiq();
-
-shop.sotish("non", 3);
-
-shop.qabul("fanta", 4);
-
-shop.qoldiq();
+console.log(findDoublers("hello"));
+console.log(findDoublers("dost"));
+console.log(findDoublers("ozod"));
+console.log(findDoublers("trust"));
+console.log(findDoublers("Mit"));
