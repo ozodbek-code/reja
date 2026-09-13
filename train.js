@@ -144,18 +144,34 @@
 // shop.qabul("fanta", 4);
 
 
-function findDoublers(str) {
-    const letters = new Set();
-    for(let char of str) {
-        if(letters.has(char)){
-         return true;
-        }
-      letters.add(char);
+// function findDoublers(str) {
+//     const letters = new Set();
+//     for(let char of str) {
+//         if(letters.has(char)){
+//          return true;
+//         }
+        
+//       letters.add(char);
+//     }
+
+//     return false;
+// }
+// console.log(findDoublers("hello"));
+// console.log(findDoublers("dost"));
+// console.log(findDoublers("ozod"));
+// console.log(findDoublers("trust"));
+// console.log(findDoublers("Mit"));
+
+function getReverse(str) {
+    let arr1 = str.split("");
+    let arr2 = [];
+
+    for (let i = arr1.length - 1; i >= 0; i--) {
+        arr2.push(arr1[i]);
     }
-    return false;
+
+    return arr2.join("");
 }
-console.log(findDoublers("hello"));
-console.log(findDoublers("dost"));
-console.log(findDoublers("ozod"));
-console.log(findDoublers("trust"));
-console.log(findDoublers("Mit"));
+
+console.log(getReverse("ASSALOM ALEKUM"));
+console.log(getReverse("Python"));
