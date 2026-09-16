@@ -162,16 +162,30 @@
 // console.log(findDoublers("trust"));
 // console.log(findDoublers("Mit"));
 
-function getReverse(str) {
-    let arr1 = str.split("");
-    let arr2 = [];
+// function getReverse(str) {
+//     let arr1 = str.split("");
+//     let arr2 = [];
 
-    for (let i = arr1.length - 1; i >= 0; i--) {
-        arr2.push(arr1[i]);
+//     for (let i = arr1.length - 1; i >= 0; i--) {
+//         arr2.push(arr1[i]);
+//     }
+
+//     return arr2.join("");
+// }
+
+// console.log(getReverse("ASSALOM ALEKUM"));
+// console.log(getReverse("Python"));
+
+
+function getHighestIndex(arr) {
+    let highest = arr[0];
+    let highestIndex = 0;
+    for(let i = 1; i < arr.length; i++) {
+        if(arr[i] > highest) {
+            highest = arr[i];
+            highestIndex = i;
+        }
     }
-
-    return arr2.join("");
+    return highestIndex;
 }
-
-console.log(getReverse("ASSALOM ALEKUM"));
-console.log(getReverse("Python"));
+console.log(getHighestIndex([6, 8, 33, 77, 22, 12, 18, 17, 11]));
