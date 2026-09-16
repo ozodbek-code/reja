@@ -185,7 +185,8 @@ function getHighestIndex(arr) {
             highest = arr[i];
             highestIndex = i;
         }
-    }
+    } 
     return highestIndex;
 }
 console.log(getHighestIndex([6, 8, 33, 77, 22, 12, 18, 17, 11]));
+ 
