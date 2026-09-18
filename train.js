@@ -177,16 +177,31 @@
 // console.log(getReverse("Python"));
 
 
-function getHighestIndex(arr) {
-    let highest = arr[0];
-    let highestIndex = 0;
-    for(let i = 1; i < arr.length; i++) {
-        if(arr[i] > highest) {
-            highest = arr[i];
-            highestIndex = i;
-        }
-    } 
-    return highestIndex;
-}
-console.log(getHighestIndex([6, 8, 33, 77, 22, 12, 18, 17, 11]));
+// function getHighestIndex(arr) {
+//     let highest = arr[0];
+//     let highestIndex = 0;
+//     for(let i = 1; i < arr.length; i++) {
+//         if(arr[i] > highest) {
+//             highest = arr[i];
+//             highestIndex = i;
+//         }
+//     } 
+//     return highestIndex;
+// }
+// console.log(getHighestIndex([6, 8, 33, 77, 22, 12, 18, 17, 11]));
  
+
+
+function getPositive(arr) {
+  let result = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      result += arr[i];
+    }
+  }
+
+  return result;
+}
+
+console.log(getPositive([5, -10, 9]));
