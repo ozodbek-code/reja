@@ -192,16 +192,40 @@
  
 
 
-function getPositive(arr) {
-  let result = "";
+// function getPositive(arr) {
+//   let result = "";
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//       result += arr[i];
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(getPositive([5, -10, 9]));
+
+function majorityElement(arr) {
+  let max = 0;
+  let result = arr[0];
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > 0) {
-      result += arr[i];
+    let count = 0;
+
+  for (let k = 0; k < arr.length; k++) {
+     if (arr[i] === arr[k]) {
+      count++;
+ }
+}
+
+    if (count > max) {
+     max = count;
+     result = arr[i];
+      }
     }
-  }
 
   return result;
 }
 
-console.log(getPositive([5, -10, 9]));
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
